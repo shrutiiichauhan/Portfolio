@@ -182,6 +182,7 @@ nav{
 .ic-pink{background:rgba(236,72,153,0.15);color:var(--pink)}
 .ic-cyan{background:rgba(6,182,212,0.15);color:var(--cyan)}
 .ic-amber{background:rgba(245,158,11,0.15);color:#F59E0B}
+.ic-green{background:rgba(34,197,94,0.15);color:#22C55E}
 .skill-cat-title{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text)}
 .skill-tags{display:flex;flex-wrap:wrap;gap:7px}
 .skill-tag{
@@ -225,6 +226,20 @@ nav{
   padding:3px 12px;border-radius:50px;
   font-family:'JetBrains Mono',monospace;
 }
+.client-projects-title{
+  font-size:14px;font-weight:600;color:var(--text-muted);
+  margin:36px 0 18px;text-transform:uppercase;letter-spacing:0.05em;
+  font-family:'JetBrains Mono',monospace;
+}
+.client-projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.client-proj-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:14px;padding:20px;
+  transition:border-color 0.25s,transform 0.2s;
+}
+.client-proj-card:hover{border-color:rgba(124,58,237,0.4);transform:translateY(-3px)}
+.client-proj-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.client-proj-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
 
 /* EDUCATION */
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
@@ -540,6 +555,16 @@ footer span{
           <span class="skill-tag">Label-IMG</span>
         </div>
       </div>
+      <div class="skill-cat reveal reveal-delay-2">
+        <div class="skill-cat-icon ic-green">CM</div>
+        <div class="skill-cat-title">Soft Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Client Communication</span>
+          <span class="skill-tag">Requirement Gathering</span>
+          <span class="skill-tag">Team Collaboration</span>
+          <span class="skill-tag">Problem Solving</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -562,10 +587,39 @@ footer span{
         <div class="exp-badge" id="expBadge">2 yr 2 months</div>
       </div>
       <p class="exp-desc">
-        Worked on multiple production-grade client projects in Odoo, developing and customizing business modules end-to-end. Integrated third-party services including Zoho CRM and MySteel APIs. Collaborated in a professional team environment, shipping features to real users and maintaining existing codebases. Built a strong foundation in ERP development and business logic.
+        Worked on multiple production-grade client projects in Odoo, developing and customizing business modules end-to-end. Communicated directly with clients to gather requirements, clarify scope, and provide implementation updates throughout each project. Integrated third-party services including Zoho CRM and MySteel APIs. Collaborated in a professional team environment, shipping features to real users and maintaining existing codebases. Built a strong foundation in ERP development, business logic, and client-facing communication.
       </p>
-      <div class="exp-tech">
-        <span>Python</span><span>Odoo</span><span>Zoho API</span><span>MySteel API</span><span>PostgreSQL</span>
+    </div>
+
+    <div class="client-projects-title">Client Projects</div>
+    <div class="client-projects-grid">
+      <div class="client-proj-card reveal reveal-delay-1">
+        <div class="client-proj-name">Event Souk</div>
+        <div class="client-proj-desc">Built a CRM customization flow with WhatsApp-based lead creation, so new leads are captured automatically from WhatsApp conversations.</div>
+      </div>
+      <div class="client-proj-card reveal reveal-delay-2">
+        <div class="client-proj-name">Deep Sleep</div>
+        <div class="client-proj-desc">Contributed to Salla integration with the existing system, connecting store data smoothly between platforms.</div>
+      </div>
+      <div class="client-proj-card reveal reveal-delay-3">
+        <div class="client-proj-name">Tranzila</div>
+        <div class="client-proj-desc">Worked on the Tranzila payment API bridge and customized the POS flow to fit the client's checkout process.</div>
+      </div>
+      <div class="client-proj-card reveal reveal-delay-1">
+        <div class="client-proj-name">Enterprise</div>
+        <div class="client-proj-desc">Handled community database syncing to keep data consistent and up to date across systems.</div>
+      </div>
+      <div class="client-proj-card reveal reveal-delay-2">
+        <div class="client-proj-name">Shipping Connectors</div>
+        <div class="client-proj-desc">Built multiple shipping integrations including DPD, Shippo, ShipRocket, ShipStation, UPS, USPS, and more.</div>
+      </div>
+      <div class="client-proj-card reveal reveal-delay-3">
+        <div class="client-proj-name">Blaura</div>
+        <div class="client-proj-desc">Customized templates and SMS flows, and integrated a WhatsApp loyalty points system along with other features.</div>
+      </div>
+      <div class="client-proj-card reveal reveal-delay-1">
+        <div class="client-proj-name">And Many More</div>
+        <div class="client-proj-desc">Along with several other client projects across CRM customization, integrations, and custom feature development.</div>
       </div>
     </div>
   </div>
