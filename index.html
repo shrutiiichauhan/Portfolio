@@ -138,28 +138,6 @@ nav{
 .stat-label{font-size:12px;color:var(--text-muted);font-weight:400}
 .stat-accent{color:var(--purple-light)}
 
-/* FLOATING CARDS (decorative) */
-.hero-visual{
-  position:absolute;right:5%;top:50%;transform:translateY(-50%);
-  z-index:1;display:none;
-}
-@media(min-width:1100px){.hero-visual{display:block}}
-.float-card{
-  background:var(--bg-card);
-  border:1px solid var(--border);
-  border-radius:14px;padding:16px 20px;
-  font-size:13px;position:absolute;
-  backdrop-filter:blur(10px);
-}
-.float-card1{top:-80px;right:0;width:200px;animation:float1 4s ease-in-out infinite}
-.float-card2{top:60px;right:220px;width:180px;animation:float2 5s ease-in-out infinite}
-.float-card3{bottom:-60px;right:40px;width:190px;animation:float1 4.5s ease-in-out infinite 1s}
-@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
-.float-label{font-size:10px;color:var(--purple-light);font-family:'JetBrains Mono',monospace;margin-bottom:8px;font-weight:500}
-.float-val{font-size:22px;font-weight:700;color:var(--text)}
-.float-sub{font-size:11px;color:var(--text-muted);margin-top:2px}
-
 /* SECTION SHARED */
 .section{padding:90px 5%}
 .section-inner{max-width:1000px;margin:0 auto}
@@ -197,12 +175,13 @@ nav{
 .skill-cat-icon{
   width:44px;height:44px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin-bottom:14px;
+  font-size:18px;margin-bottom:14px;font-weight:700;
+  font-family:'JetBrains Mono',monospace;
 }
-.ic-purple{background:rgba(124,58,237,0.15)}
-.ic-pink{background:rgba(236,72,153,0.15)}
-.ic-cyan{background:rgba(6,182,212,0.15)}
-.ic-amber{background:rgba(245,158,11,0.15)}
+.ic-purple{background:rgba(124,58,237,0.15);color:var(--purple-light)}
+.ic-pink{background:rgba(236,72,153,0.15);color:var(--pink)}
+.ic-cyan{background:rgba(6,182,212,0.15);color:var(--cyan)}
+.ic-amber{background:rgba(245,158,11,0.15);color:#F59E0B}
 .skill-cat-title{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text)}
 .skill-tags{display:flex;flex-wrap:wrap;gap:7px}
 .skill-tag{
@@ -298,8 +277,8 @@ nav{
 .proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
 .proj-icon-wrap{
   width:48px;height:48px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;font-size:24px;
-  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+  flex-shrink:0;font-weight:700;font-family:'JetBrains Mono',monospace;
 }
 .proj-num{font-size:11px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-weight:500}
 .proj-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px}
@@ -333,7 +312,8 @@ nav{
 .cert-item:hover{border-color:rgba(124,58,237,0.4);transform:translateX(4px)}
 .cert-icon{
   width:36px;height:36px;border-radius:9px;flex-shrink:0;
-  background:rgba(124,58,237,0.15);display:flex;align-items:center;justify-content:center;font-size:17px;
+  background:rgba(124,58,237,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;
+  color:var(--purple-light);font-weight:700;
 }
 .cert-text{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
 .cert-org{font-size:11px;color:var(--purple-light);margin-top:3px;font-family:'JetBrains Mono',monospace}
@@ -439,7 +419,7 @@ footer span{
       <span class="role">Python Developer & AI Enthusiast</span>
     </h1>
     <p class="hero-desc">
-      B.Tech Computer Engineering graduate with 1 year 8 months of real-world experience in Python, Odoo, and API integrations. Building intelligent systems — from AI voice doctors to fruit detection models.
+      B.Tech Computer Engineering graduate with <span id="heroDescYears">2 years 2 months</span> of professional experience in Python, Odoo, and API integrations. Building intelligent systems — from AI voice doctors to fruit detection models.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn-hero btn-primary-hero">View my work</a>
@@ -447,34 +427,13 @@ footer span{
     </div>
     <div class="hero-stats">
       <div>
-        <span class="stat-num">1.8<span class="stat-accent">+</span></span>
+        <span class="stat-num" id="heroYearsStat">2.2<span class="stat-accent">+</span></span>
         <span class="stat-label">Years experience</span>
       </div>
       <div>
         <span class="stat-num">3<span class="stat-accent">+</span></span>
         <span class="stat-label">Projects built</span>
       </div>
-      <div>
-        <span class="stat-num">8.5<span class="stat-accent"> CGPA</span></span>
-        <span class="stat-label">B.Tech score</span>
-      </div>
-    </div>
-  </div>
-  <div class="hero-visual" style="width:300px;height:260px;position:relative">
-    <div class="float-card float-card1">
-      <div class="float-label">// skills.py</div>
-      <div class="float-val">Python</div>
-      <div class="float-sub">+ Odoo &amp; API</div>
-    </div>
-    <div class="float-card float-card2">
-      <div class="float-label">// model.ml</div>
-      <div class="float-val">YOLO v11</div>
-      <div class="float-sub">fruit detection</div>
-    </div>
-    <div class="float-card float-card3">
-      <div class="float-label">// ai_doctor.py</div>
-      <div class="float-val">Groq</div>
-      <div class="float-sub">llama-4 vision</div>
     </div>
   </div>
 </section>
@@ -491,7 +450,7 @@ footer span{
     </div>
     <div class="skills-categories">
       <div class="skill-cat reveal reveal-delay-1">
-        <div class="skill-cat-icon ic-purple">🐍</div>
+        <div class="skill-cat-icon ic-purple">PY</div>
         <div class="skill-cat-title">Backend &amp; Frameworks</div>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
@@ -502,7 +461,7 @@ footer span{
         </div>
       </div>
       <div class="skill-cat reveal reveal-delay-2">
-        <div class="skill-cat-icon ic-pink">🤖</div>
+        <div class="skill-cat-icon ic-pink">AI</div>
         <div class="skill-cat-title">AI / ML</div>
         <div class="skill-tags">
           <span class="skill-tag">AI / ML</span>
@@ -513,7 +472,7 @@ footer span{
         </div>
       </div>
       <div class="skill-cat reveal reveal-delay-3">
-        <div class="skill-cat-icon ic-cyan">🔌</div>
+        <div class="skill-cat-icon ic-cyan">DB</div>
         <div class="skill-cat-title">Database &amp; API</div>
         <div class="skill-tags">
           <span class="skill-tag">SQL</span>
@@ -524,7 +483,7 @@ footer span{
         </div>
       </div>
       <div class="skill-cat reveal reveal-delay-1">
-        <div class="skill-cat-icon ic-amber">🎨</div>
+        <div class="skill-cat-icon ic-amber">UX</div>
         <div class="skill-cat-title">Design &amp; Tools</div>
         <div class="skill-tags">
           <span class="skill-tag">Figma</span>
@@ -552,7 +511,7 @@ footer span{
           <div class="exp-role">Python Developer</div>
           <div class="exp-company">Softhealer Technologies Pvt. Ltd.</div>
         </div>
-        <div class="exp-badge">1 yr 8 months</div>
+        <div class="exp-badge" id="expBadge">2 yr 2 months</div>
       </div>
       <p class="exp-desc">
         Worked on multiple production-grade client projects in Odoo, developing and customizing business modules end-to-end. Integrated third-party services including Zoho CRM and MySteel APIs. Collaborated in a professional team environment, shipping features to real users and maintaining existing codebases. Built a strong foundation in ERP development and business logic.
@@ -611,7 +570,7 @@ footer span{
       <div class="proj-card reveal reveal-delay-1">
         <div class="proj-glow"></div>
         <div class="proj-header">
-          <div class="proj-icon-wrap" style="background:rgba(124,58,237,0.15)">🩺</div>
+          <div class="proj-icon-wrap" style="background:rgba(124,58,237,0.15);color:var(--purple-light)">AI</div>
           <div class="proj-num">01</div>
         </div>
         <div class="proj-title">AI Voice Doctor</div>
@@ -633,7 +592,7 @@ footer span{
       <div class="proj-card reveal reveal-delay-2">
         <div class="proj-glow"></div>
         <div class="proj-header">
-          <div class="proj-icon-wrap" style="background:rgba(236,72,153,0.15)">🍎</div>
+          <div class="proj-icon-wrap" style="background:rgba(236,72,153,0.15);color:var(--pink)">CV</div>
           <div class="proj-num">02</div>
         </div>
         <div class="proj-title">Fruit Recognition System</div>
@@ -654,7 +613,7 @@ footer span{
       <div class="proj-card reveal reveal-delay-3">
         <div class="proj-glow"></div>
         <div class="proj-header">
-          <div class="proj-icon-wrap" style="background:rgba(6,182,212,0.15)">🌿</div>
+          <div class="proj-icon-wrap" style="background:rgba(6,182,212,0.15);color:var(--cyan)">JS</div>
           <div class="proj-num">03</div>
         </div>
         <div class="proj-title">E-commerce Plant Store</div>
@@ -687,42 +646,42 @@ footer span{
     </div>
     <div class="cert-grid">
       <div class="cert-item reveal reveal-delay-1">
-        <div class="cert-icon">🐍</div>
+        <div class="cert-icon">PY</div>
         <div>
           <div class="cert-text">Programming Essentials in Python</div>
           <div class="cert-org">Cisco Networking Academy</div>
         </div>
       </div>
       <div class="cert-item reveal reveal-delay-2">
-        <div class="cert-icon">☕</div>
+        <div class="cert-icon">JV</div>
         <div>
           <div class="cert-text">Java Programming Fundamentals</div>
           <div class="cert-org">Infosys Springboard</div>
         </div>
       </div>
       <div class="cert-item reveal reveal-delay-3">
-        <div class="cert-icon">📊</div>
+        <div class="cert-icon">DA</div>
         <div>
           <div class="cert-text">Google Data Analytics Course</div>
           <div class="cert-org">Google</div>
         </div>
       </div>
       <div class="cert-item reveal reveal-delay-1">
-        <div class="cert-icon">🎨</div>
+        <div class="cert-icon">FG</div>
         <div>
           <div class="cert-text">Figma Fest Participant</div>
           <div class="cert-org">Figma</div>
         </div>
       </div>
       <div class="cert-item reveal reveal-delay-2">
-        <div class="cert-icon">💡</div>
+        <div class="cert-icon">ID</div>
         <div>
           <div class="cert-text">24 Hours Ideathon</div>
           <div class="cert-org">Hackathon achievement</div>
         </div>
       </div>
       <div class="cert-item reveal reveal-delay-3">
-        <div class="cert-icon">🏢</div>
+        <div class="cert-icon">IN</div>
         <div>
           <div class="cert-text">Internship Completion</div>
           <div class="cert-org">Softhealer Technologies Pvt. Ltd.</div>
@@ -741,7 +700,7 @@ footer span{
       <div class="contact-title">Let's work <span>together</span></div>
       <p class="contact-sub">Open to new roles, freelance projects, or just a chat about Python, AI, or Odoo. Feel free to reach out!</p>
       <div class="contact-links">
-        <a href="mailto:shruti21chauhan@gmail.com" class="contact-btn cb-primary">✉ shruti21chauhan@gmail.com</a>
+        <a href="mailto:shruti21chauhan@gmail.com" class="contact-btn cb-primary">shruti21chauhan@gmail.com</a>
         <a href="https://github.com/Shruti6s" target="_blank" rel="noopener" class="contact-btn cb-github">GitHub</a>
         <a href="https://www.linkedin.com/in/shruti-chauhan-519b37253" target="_blank" rel="noopener" class="contact-btn cb-linkedin">LinkedIn</a>
         <a href="tel:+918320738534" class="contact-btn cb-phone">+91 8320738534</a>
@@ -752,10 +711,42 @@ footer span{
 
 <!-- FOOTER -->
 <footer>
-  <p>Designed &amp; built by <span>Shruti Chauhan</span> · Rajkot, Gujarat 🇮🇳</p>
+  <p>Designed &amp; built by <span>Shruti Chauhan</span> · Rajkot, Gujarat</p>
 </footer>
 
 <script>
+// ---- Dynamic experience calculator ----
+// Set your actual joining date here (YYYY, MM (1-12), DD)
+const JOIN_DATE = new Date(2024, 4, 1); // May 2024
+
+function calcExperience(joinDate){
+  const now = new Date();
+  let years = now.getFullYear() - joinDate.getFullYear();
+  let months = now.getMonth() - joinDate.getMonth();
+  if(now.getDate() < joinDate.getDate()) months -= 1;
+  if(months < 0){ years -= 1; months += 12; }
+  return { years, months };
+}
+
+function updateExperienceUI(){
+  const { years, months } = calcExperience(JOIN_DATE);
+  const yrLabel = years === 1 ? 'yr' : 'yrs';
+  const moLabel = months === 1 ? 'month' : 'months';
+  const badgeText = months > 0 ? `${years} ${yrLabel} ${months} ${moLabel}` : `${years} ${yrLabel}`;
+  const descText = months > 0 ? `${years} years ${months} months` : `${years} years`;
+  const statDecimal = (years + months/12).toFixed(1);
+
+  const badgeEl = document.getElementById('expBadge');
+  const descEl = document.getElementById('heroDescYears');
+  const statEl = document.getElementById('heroYearsStat');
+
+  if(badgeEl) badgeEl.textContent = badgeText;
+  if(descEl) descEl.textContent = descText;
+  if(statEl) statEl.innerHTML = `${statDecimal}<span class="stat-accent">+</span>`;
+}
+updateExperienceUI();
+
+// ---- Scroll reveal ----
 const reveals=document.querySelectorAll('.reveal');
 const io=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
